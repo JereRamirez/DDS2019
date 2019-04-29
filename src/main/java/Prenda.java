@@ -8,7 +8,6 @@ public class Prenda {
     private String colorPrenda;
     private int menorTemperaturaPrenda;
     private int mayorTemperaturaPrenda;
-    //Al ampliar aun mas el trabajo, deberiamos agregar otros atributos como clima(lluvia, sol, etc)
 
     public Prenda(){
         };

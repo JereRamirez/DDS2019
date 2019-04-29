@@ -44,4 +44,14 @@ public class Sugerencia {
     public LinkedList<Prenda> getPrendasOpcionales(){
         return prendasOpcionales;
     }
+
+    public void unaSugerencia(){
+        Prenda torso = this.getPrendasTorso().getFirst();
+        Prenda piernas = this.getPrendasPiernas().getFirst();
+        Prenda pies = this.getPrendasPies().getFirst();
+        Prenda opcional = this.getPrendasOpcionales().getFirst();
+
+        System.out.println("Una posible combinación seria: " );
+        System.out.println("[ " + torso.getNombrePrenda() + " " + torso.getColorPrenda() + " , " + piernas.getNombrePrenda() + " " + piernas.getColorPrenda() + " , " + pies.getNombrePrenda() + " " + pies.getColorPrenda() + " y " + opcional.getNombrePrenda() + " " + opcional.getColorPrenda() + " ]");
+    }
 }

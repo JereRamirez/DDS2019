@@ -2,12 +2,10 @@ import java.util.*;
 
 public class GuardaRopas {
     private LinkedList<Prenda> listaPrendas;
-    private Sugerencia unaSugerencia;
 
     public GuardaRopas(){
         this.listaPrendas = new LinkedList<Prenda>();
-        this.unaSugerencia = new Sugerencia();
-    }
+        }
 
     public void addPrenda(Prenda nuevaPrenda){
         this.listaPrendas.add(nuevaPrenda);
@@ -18,7 +16,7 @@ public class GuardaRopas {
     }
 
     public Sugerencia sugerirCombinacion(int temperatura){
-        LinkedList<Prenda> sugerencia = new LinkedList<Prenda>();
+        Sugerencia sugeridas = new Sugerencia();
         ListIterator<Prenda> listAux = this.listaPrendas.listIterator();
         Prenda prendaAux;
 
@@ -29,24 +27,25 @@ public class GuardaRopas {
                 //al no necesitar controlar que no haya repetidos, no agrego otro control, sino deberia ir en esta parte
                 switch (prendaAux.getTipoPrenda()){
                     case PIES:{
-                        unaSugerencia.agregarPies(prendaAux);
+                        sugeridas.agregarPies(prendaAux);
                         break;
                     }
                     case PIERNAS:{
-                        unaSugerencia.agregarPiernas(prendaAux);
+                        sugeridas.agregarPiernas(prendaAux);
                         break;
                     }
                     case TORSO:{
-                        unaSugerencia.agregarTorso(prendaAux);
+                        sugeridas.agregarTorso(prendaAux);
                         break;
                     }
                     case OPCIONALES:{
-                        unaSugerencia.agregarOpcional(prendaAux);
+                        sugeridas.agregarOpcional(prendaAux);
                         break;
                     }
                 }
             }
         }
-        return unaSugerencia;
+        sugeridas.unaSugerencia();
+        return sugeridas;
     }
 }
